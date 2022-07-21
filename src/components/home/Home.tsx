@@ -4,42 +4,40 @@ import { NavLink } from 'react-router-dom';
 import CurrentPlaygroundContext from '../../contexts/CurrentPlayground';
 
 const Home = () => {
-  const {
-    setRowsNumber,
-    rowsNumber,
-    setColumnsNumber,
-    columnsNumber,
-    setHooverLocationX,
-    hooverLocationX,
-    setHooverLocationY,
-    hooverLocationY,
-    setHooverDirection,
-    hooverDirection,
-  } = useContext(CurrentPlaygroundContext);
+  const { grid, setGrid, hoover, setHoover } = useContext(CurrentPlaygroundContext);
+  console.log(grid);
+  console.log(hoover);
   // Fonction qui permet de choisir le nombre de lignes du playground
   const handleChangeRowsNumber = (e: React.FormEvent<HTMLInputElement>) => {
-    setRowsNumber(Number(e.currentTarget.value));
-    console.log(rowsNumber);
+    setGrid({ rows: Number(e.currentTarget.value), columns: grid.columns });
   };
   // Fonction qui permet de choisir le nombre de colonnes du playground
   const handleChangeColumnsNumber = (e: React.FormEvent<HTMLInputElement>) => {
-    setColumnsNumber(Number(e.currentTarget.value));
-    console.log(columnsNumber);
+    setGrid({ rows: grid.rows, columns: Number(e.currentTarget.value) });
   };
   // Fonction qui permet de choisir la position X de départ du hoover
   const handleChangeHooverLocationX = (e: React.FormEvent<HTMLInputElement>) => {
-    setHooverLocationX(Number(e.currentTarget.value));
-    console.log(hooverLocationX);
+    setHoover({
+      locationX: Number(e.currentTarget.value),
+      locationY: hoover.locationY,
+      direction: hoover.direction,
+    });
   };
   // Fonction qui permet de choisir la position Y de départ du hoover
   const handleChangeHooverLocationY = (e: React.FormEvent<HTMLInputElement>) => {
-    setHooverLocationY(Number(e.currentTarget.value));
-    console.log(hooverLocationY);
+    setHoover({
+      locationX: hoover.locationX,
+      locationY: Number(e.currentTarget.value),
+      direction: hoover.direction,
+    });
   };
   // Fonction qui permet de choisir l'orientation de départ du hoover
-  const handleChangeHooverDirection = (e: React.FormEvent<HTMLInputElement>) => {
-    setHooverDirection(e.currentTarget.value);
-    console.log(hooverDirection);
+  const handleChangeHooverDirection = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setHoover({
+      locationX: hoover.locationX,
+      locationY: hoover.locationY,
+      direction: String(e.currentTarget.value),
+    });
   };
   return (
     <div className="App">
@@ -50,12 +48,12 @@ const Home = () => {
           <label htmlFor="horizontal">Horizontal</label>
           <input
             type="number"
-            value={rowsNumber}
+            value={grid.rows}
             onChange={handleChangeRowsNumber}></input>
           <label htmlFor="vertical">Vertical</label>
           <input
             type="number"
-            value={columnsNumber}
+            value={grid.columns}
             onChange={handleChangeColumnsNumber}></input>
         </div>
         <div>
@@ -63,16 +61,18 @@ const Home = () => {
           <label htmlFor="horizontal">Horizontal</label>
           <input
             type="number"
-            value={hooverLocationX}
+            value={hoover.locationX}
             onChange={handleChangeHooverLocationX}></input>
           <label htmlFor="vertical">Vertical</label>
           <input
             type="number"
-            value={hooverLocationY}
+            value={hoover.locationY}
             onChange={handleChangeHooverLocationY}></input>
           <label htmlFor="direction">Direction</label>
-          <select name="directions" id="direction-select">
-            <option value="">--Please choose a direction--</option>
+          <select
+            name="directions"
+            id="direction-select"
+            onChange={handleChangeHooverDirection}>
             <option value="N">N</option>
             <option value="E">E</option>
             <option value="W">W</option>
@@ -81,11 +81,7 @@ const Home = () => {
         </div>
         <NavLink to="/playground">
           <div>
-            <input
-              type="submit"
-              value="Let's go !"
-              onChange={handleChangeHooverDirection}
-            />
+            <input type="submit" value="Let's go !" />
           </div>
         </NavLink>
       </form>

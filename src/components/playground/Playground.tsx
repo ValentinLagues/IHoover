@@ -1,19 +1,12 @@
-import React, { useContext, useState } from 'react';
+import './Playground.css';
+
+import React, { useContext } from 'react';
 
 import CurrentPlaygroundContext from '../../contexts/CurrentPlayground';
 import Hoover from '../hoover/Hoover';
 
 const Playground = () => {
-  const [commandsList, setCommandsList] = useState('');
-
-  const {
-    setHooverLocationX,
-    hooverLocationX,
-    setHooverLocationY,
-    hooverLocationY,
-    setHooverDirection,
-    hooverDirection,
-  } = useContext(CurrentPlaygroundContext);
+  const { grid, hoover, setHoover } = useContext(CurrentPlaygroundContext);
 
   // Only authorizing dga characters
   const checkDGA = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -28,36 +21,10 @@ const Playground = () => {
     }
   };
 
-  // Button to rotate 90° on the right
-  const rotateRight = () => {
-    if (hooverDirection === 'N') {
-      setHooverDirection('E');
-    } else if (hooverDirection === 'E') {
-      setHooverDirection('S');
-    } else if (hooverDirection === 'S') {
-      setHooverDirection('W');
-    } else if (hooverDirection === 'W') {
-      setHooverDirection('N');
-    }
-    console.log(hooverDirection);
-  };
-  // Button to rotate 90° on the left
-  const rotateLeft = () => {
-    if (hooverDirection === 'N') {
-      setHooverDirection('W');
-    } else if (hooverDirection === 'W') {
-      setHooverDirection('S');
-    } else if (hooverDirection === 'S') {
-      setHooverDirection('E');
-    } else if (hooverDirection === 'E') {
-      setHooverDirection('N');
-    }
-  };
-
-  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    setCommandsList(e.currentTarget.value);
-    console.log(commandsList);
-  };
+  // const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+  //   setCommandsList(e.currentTarget.value);
+  //   console.log(commandsList);
+  // };
 
   return (
     <div>
@@ -73,24 +40,33 @@ const Playground = () => {
           button
         </p>
       </div>
-      <div className="grid">
-        GRID
-        <Hoover />
+      <div
+        className="grid"
+        style={{
+          gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
+          gridTemplateColumns: `repeat(${grid.columns}, 1fr)`,
+        }}>
+        {Array.from({ length: grid.rows }, (_v, k) => k).map(() =>
+          Array.from({ length: grid.columns }, (_v, k) => k).map((_item, index) => (
+            <div className="grid-item" key={index} />
+          )),
+        )}
+        <Hoover {...hoover} />
       </div>
       <div>
         <input
           type="text"
           onKeyDown={checkDGA}
           placeholder="Entrez vos commandes"
-          value={commandsList}
-          onChange={handleChange}
+          // value={commandsList}
+          // onChange={handleChange}
         />
         <input type="submit"></input>
       </div>
-      <div className="commands">
+      {/* <div className="commands">
         <button onClick={() => rotateLeft}>- 90°</button>
         <button onClick={() => rotateRight}>+ 90°</button>
-      </div>
+      </div> */}
     </div>
   );
 };
