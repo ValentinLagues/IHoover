@@ -24,7 +24,7 @@ const CurrentPlaygroundContext = createContext<PlaygroundContent>({
   setHooverLocationX: () => {},
   hooverLocationY: 0,
   setHooverLocationY: () => {},
-  hooverDirection: 'N',
+  hooverDirection: '',
   setHooverDirection: () => {},
 });
 
@@ -35,7 +35,7 @@ export const CurrentPlaygroundContextProvider = ({
   const [columnsNumber, setColumnsNumber] = useState<number>(1);
   const [hooverLocationX, setHooverLocationX] = useState<number>(0);
   const [hooverLocationY, setHooverLocationY] = useState<number>(0);
-  const [hooverDirection, setHooverDirection] = useState<string>('N');
+  const [hooverDirection, setHooverDirection] = useState<string>('');
 
   return (
     <CurrentPlaygroundContext.Provider
