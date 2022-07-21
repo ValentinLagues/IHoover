@@ -1,0 +1,39 @@
+@keyframes neon {
+    0%{
+      text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 42px rgb(230, 18, 124),
+        0 0 77px rgb(230, 18, 124),
+        0 0 100px rgb(230, 18, 124);
+    }
+    50% {
+      text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 32px rgb(230, 18, 124),
+        0 0 87px rgb(230, 18, 124),
+        0 0 120px rgb(230, 18, 124);
+    }
+    }
+
+.home {
+    color: white;
+}
+
+#home-title {
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 42px rgb(230, 18, 124),
+    0 0 77px rgb(230, 18, 124),
+    0 0 100px rgb(230, 18, 124);
+  animation: neon 2s infinite linear;
+  font-family: SOR2BW;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+}

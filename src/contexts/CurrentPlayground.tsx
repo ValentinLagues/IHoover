@@ -25,10 +25,10 @@ const CurrentPlaygroundContext = createContext<PlaygroundContent>({
 export const CurrentPlaygroundContextProvider = ({
   children,
 }: CurrentPlaygroundProps) => {
-  const [grid, setGrid] = useState<IGrid>({ rows: 4, columns: 6 });
+  const [grid, setGrid] = useState<IGrid>({ rows: 0, columns: 0 });
   const [hoover, setHoover] = useState<IHoover>({
-    locationX: 1,
-    locationY: 1,
+    locationX: 0,
+    locationY: 0,
     direction: 'N',
   });
 

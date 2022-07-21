@@ -1,12 +1,14 @@
+import './Home.css';
+
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import vacuumHome from '../../assets/vacuumHome.png';
 import CurrentPlaygroundContext from '../../contexts/CurrentPlayground';
 
 const Home = () => {
   const { grid, setGrid, hoover, setHoover } = useContext(CurrentPlaygroundContext);
-  console.log(grid);
-  console.log(hoover);
+
   // Fonction qui permet de choisir le nombre de lignes du playground
   const handleChangeRowsNumber = (e: React.FormEvent<HTMLInputElement>) => {
     setGrid({ rows: Number(e.currentTarget.value), columns: grid.columns });
@@ -40,10 +42,11 @@ const Home = () => {
     });
   };
   return (
-    <div className="App">
-      <h1>Welcome to IHoover playground</h1>
+    <div className="home">
+      <img src={vacuumHome} alt="vacuum-home" width={150} height={150} />
+      <h1 id="home-title">WELCOME TO IHOOVER PLAYGROUND</h1>
       <form>
-        <div>
+        <div className="form-section">
           <p>Please select the size of the room you want to clean</p>
           <label htmlFor="horizontal">Horizontal</label>
           <input
@@ -56,7 +59,7 @@ const Home = () => {
             value={grid.columns}
             onChange={handleChangeColumnsNumber}></input>
         </div>
-        <div>
+        <div className="form-section">
           <p>Please select the initial position of your wonderful hoover</p>
           <label htmlFor="horizontal">Horizontal</label>
           <input

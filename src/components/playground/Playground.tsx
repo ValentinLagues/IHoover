@@ -1,12 +1,12 @@
 import './Playground.css';
 
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import CurrentPlaygroundContext from '../../contexts/CurrentPlayground';
 import Hoover from '../hoover/Hoover';
 
 const Playground = () => {
-  const { grid, hoover, setHoover } = useContext(CurrentPlaygroundContext);
+  const { grid, hoover, setHoover, moveHoover } = useContext(CurrentPlaygroundContext);
 
   // Only authorizing dga characters
   const checkDGA = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -21,10 +21,10 @@ const Playground = () => {
     }
   };
 
-  // const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-  //   setCommandsList(e.currentTarget.value);
-  //   console.log(commandsList);
-  // };
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    moveHoover(e.currentTarget.value);
+  };
+  console.log(hoover);
 
   return (
     <div>
@@ -58,8 +58,8 @@ const Playground = () => {
           type="text"
           onKeyDown={checkDGA}
           placeholder="Entrez vos commandes"
-          // value={commandsList}
-          // onChange={handleChange}
+          value=""
+          onChange={handleChange}
         />
         <input type="submit"></input>
       </div>

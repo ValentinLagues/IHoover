@@ -9,28 +9,30 @@ const Hoover = (hoover: IHoover) => {
   const getRotation = (position: string): void => {
     switch (position) {
       case 'N':
-        '0deg';
+        0;
         break;
       case 'E':
-        '90deg';
+        90;
         break;
       case 'S':
-        '180deg';
+        180;
         break;
       case 'W':
-        '270deg';
+        270;
         break;
     }
   };
+  console.log(getRotation);
+  console.log(hoover.direction);
   return (
     <div
       className="hoover"
       style={{
         gridRow: hoover.locationX,
         gridColumn: hoover.locationY,
-        transform: `rotate(${getRotation(hoover.direction)})`,
+        transform: `rotate(${getRotation(hoover.direction)}deg)`,
       }}>
-      <img src={vacuum} alt="vacuum" height={100} width={100} />
+      <img src={vacuum} alt="vacuum" height={100} width={100} style={{}} />
     </div>
   );
 };
