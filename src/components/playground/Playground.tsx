@@ -53,6 +53,9 @@ const Playground = () => {
         )}
         <Hoover {...hoover} />
       </div>
+      <p>
+        X : {hoover.locationX}, Y : {hoover.locationY}, dir : {hoover.direction}
+      </p>
       <div>
         <input
           type="text"

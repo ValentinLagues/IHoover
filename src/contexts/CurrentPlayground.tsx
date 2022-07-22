@@ -15,9 +15,9 @@ type PlaygroundContent = {
 type CurrentPlaygroundProps = { children: React.ReactNode };
 
 const CurrentPlaygroundContext = createContext<PlaygroundContent>({
-  grid: { rows: 0, columns: 0 },
+  grid: { rows: 10, columns: 10 },
   setGrid: () => {},
-  hoover: { locationX: 0, locationY: 0, direction: 'N' },
+  hoover: { locationX: 5, locationY: 5, direction: 'N' },
   setHoover: () => {},
   moveHoover: (c: string) => c,
 });
@@ -25,10 +25,10 @@ const CurrentPlaygroundContext = createContext<PlaygroundContent>({
 export const CurrentPlaygroundContextProvider = ({
   children,
 }: CurrentPlaygroundProps) => {
-  const [grid, setGrid] = useState<IGrid>({ rows: 0, columns: 0 });
+  const [grid, setGrid] = useState<IGrid>({ rows: 10, columns: 10 });
   const [hoover, setHoover] = useState<IHoover>({
-    locationX: 0,
-    locationY: 0,
+    locationX: 5,
+    locationY: 5,
     direction: 'N',
   });
 
@@ -111,7 +111,7 @@ export const CurrentPlaygroundContextProvider = ({
           setHoover({
             locationX: hoover.locationX - 1,
             locationY: hoover.locationY,
-            direction: 'E',
+            direction: 'W',
           });
         }
         break;
