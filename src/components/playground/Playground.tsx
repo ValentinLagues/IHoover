@@ -88,21 +88,37 @@ const Playground = () => {
               onChange={handleHooverInstructions}
             />
             <div className="instructions-buttons">
-              <input className="commands-button" type="submit" value="Valider"></input>
+              <button className="commands-button" type="submit">
+                VALIDER
+              </button>
               <button className="commands-button" onClick={resetInstructions}>
-                Reset
+                RESET
               </button>
             </div>
           </form>
           <div className="commands">
             <p className="commands-title">BOUTONS DE COMMANDES</p>
-            <button onClick={() => setHoover(moveHoover('g', hoover))}>- 90°</button>
-            <button onClick={() => setHoover(moveHoover('a', hoover))}>Move</button>
-            <button onClick={() => setHoover(moveHoover('d', hoover))}>+ 90°</button>
+            <button
+              className="control-button"
+              onClick={() => setHoover(moveHoover('g', hoover))}>
+              - 90°
+            </button>
+            <button
+              className="control-button"
+              onClick={() => setHoover(moveHoover('a', hoover))}>
+              A
+            </button>
+            <button
+              className="control-button"
+              onClick={() => setHoover(moveHoover('d', hoover))}>
+              + 90°
+            </button>
           </div>
           <NavLink to="/">
             <div>
-              <input className="commands-button" type="submit" value="RESET PLAYGROUND" />
+              <button className="commands-button" type="submit" style={{ width: '22vw' }}>
+                REINITIALISER LE PLAYGROUND
+              </button>
             </div>
           </NavLink>
         </div>

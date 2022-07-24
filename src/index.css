@@ -73,9 +73,7 @@ h2 {
 }
 
 .commands-button {
-  border-radius: 50px;
-  border: 2px solid white;
-  padding: 3px 12px;
+  height: 1rem;
   font-size: 1rem;
   font-weight: bold;
   font-family: inherit;
@@ -84,6 +82,8 @@ h2 {
   cursor: pointer;
   margin: 0 auto;
   width: 8rem;
+  border: none;
+  outline: none;
 }
 
 .commands-button:hover {
@@ -94,4 +94,5 @@ h2 {
   0 0 77px rgb(18, 188, 230),
   0 0 100px rgb(18, 188, 230);
   animation: neon 2s infinite linear;
+  font-size: 1.2rem;
 }

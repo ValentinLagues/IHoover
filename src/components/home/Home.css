@@ -50,7 +50,6 @@ label {
     color: white;
     margin: 0 1rem;
     width: 3rem;
-    padding: 3px;
   }
 
   .form-select {
@@ -61,6 +60,10 @@ label {
     margin-left: 1rem;
     margin-right: 1rem;
     width: 3rem;
+  }
+
+  option {
+    color: black;
   }
 
   .validation-button {

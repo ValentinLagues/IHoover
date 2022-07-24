@@ -104,7 +104,9 @@ const Home = () => {
         </div>
         <NavLink to="/playground">
           <div className="validation-button">
-            <input className="commands-button" type="submit" value="C'est parti !" />
+            <button className="commands-button" value="C'est parti !">
+              VALIDER
+            </button>
           </div>
         </NavLink>
       </form>
