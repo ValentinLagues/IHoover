@@ -1,5 +1,6 @@
 .playground {
     width: 100%;
+    min-height: 100%;
     color: white;
 }
 
@@ -33,6 +34,8 @@
 
 .instructions {
     font-size: smaller;
+    text-align: justify;
+    margin: 0 0 1rem 0;
 }
 
 .location {
