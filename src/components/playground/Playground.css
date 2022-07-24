@@ -6,7 +6,6 @@
 
 .playground-config {
     display: flex;
-    flex-direction: row;
 }
 
 .grid {
@@ -99,3 +98,63 @@
     animation: neon 2s infinite linear;
     font-size: 1.1rem;
   }
+
+.reset-playground-button {
+    height: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: inherit;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    width: 22vw;
+    border: none;
+    outline: none;
+}
+
+.reset-playground-button:hover {
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 42px rgb(18, 188, 230),
+    0 0 77px rgb(18, 188, 230),
+    0 0 100px rgb(18, 188, 230);
+    animation: neon 2s infinite linear;
+    font-size: 1.2rem;
+  }
+
+   /* Responsive */
+   @media screen and (max-width: 750px) {
+    
+    .playground-config {
+        flex-direction: column;
+    }
+    
+    .grid {
+        width: 100%;
+        height: 60vh;
+        margin: 0 0 1rem 0;
+    }
+    
+    .playground-pad {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .location {
+        font-size: medium;
+    }
+    
+    .commands {
+        margin: 0 0 3rem 0;
+    }
+
+    .reset-playground-button {
+        height: 1.2rem;
+        font-size: 1.2rem;
+        width: 100%;
+        margin: 0 auto 2rem auto;
+    }
+    }
+  

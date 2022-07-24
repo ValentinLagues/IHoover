@@ -96,3 +96,24 @@ h2 {
   animation: neon 2s infinite linear;
   font-size: 1.2rem;
 }
+
+  /* Responsive */
+  @media screen and (max-width: 750px) {    
+    :root {
+      font-size: 15px;
+      line-height: 15px;
+    }
+    h1 {
+      font-size: 5rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+
+    .commands-button {
+      height: 1.2rem;
+      font-size: 1.2rem;
+    }
+  }
