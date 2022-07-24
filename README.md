@@ -14,4 +14,4 @@ Une fois sur le playground, vous pouvez le déplacer en utilisant :
 - des boutons de commandes qui permettent un déplacement en temps réel
 Vous pouvez également revenir à la page d'accueil en cliquant sur "Réinitialiser le playground"
 
-Amuser-vous bien !
+Amusez-vous bien !
