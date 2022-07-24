@@ -54,23 +54,10 @@
     color: white;
     margin: 0 1rem;
     padding: 3px;
-    margin: 0 0 4px 0;
+    margin: 0 0 8px 0;
   }
 
-/* .commands-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 1px 6px;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: white;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    margin: 0 6rem;
-  }
-
-.commands-button:hover {
-    border-color: #646cff;
-    color:#646cff; 
-  } */
+.instructions-buttons {
+    display: flex;
+    flex-direction: row;
+}

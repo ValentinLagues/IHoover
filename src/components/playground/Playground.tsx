@@ -72,12 +72,13 @@ const Playground = () => {
             </p>
           </div>
           <div className="location">
-            <p>HOOVER CURRENT LOCATION</p>
+            <p>EMPLACEMENT DU HOOVER</p>
             <p>
               X : {hoover.locationX}, Y : {hoover.locationY}, dir : {hoover.direction}
             </p>
           </div>
           <form onSubmit={handleChange} className="commands-list">
+            <p className="commands-title">LISTE DE COMMANDES</p>
             <input
               className="commands-input"
               type="text"
@@ -86,17 +87,22 @@ const Playground = () => {
               value={hooverInstructions}
               onChange={handleHooverInstructions}
             />
-            <input className="commands-button" type="submit" value="Valider"></input>
+            <div className="instructions-buttons">
+              <input className="commands-button" type="submit" value="Valider"></input>
+              <button className="commands-button" onClick={resetInstructions}>
+                Reset
+              </button>
+            </div>
           </form>
-          <button onClick={resetInstructions}>RESET INSTRUCTIONS</button>
           <div className="commands">
+            <p className="commands-title">BOUTONS DE COMMANDES</p>
             <button onClick={() => setHoover(moveHoover('g', hoover))}>- 90°</button>
             <button onClick={() => setHoover(moveHoover('a', hoover))}>Move</button>
             <button onClick={() => setHoover(moveHoover('d', hoover))}>+ 90°</button>
           </div>
           <NavLink to="/">
             <div>
-              <input type="submit" value="RESET PLAYGROUND" />
+              <input className="commands-button" type="submit" value="RESET PLAYGROUND" />
             </div>
           </NavLink>
         </div>
