@@ -8,13 +8,15 @@ import Playground from './components/playground/Playground';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="*" element={<Home />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/playground" element={<Playground />} />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="*" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/playground" element={<Playground />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 

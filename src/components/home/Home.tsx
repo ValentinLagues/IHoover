@@ -43,44 +43,64 @@ const Home = () => {
   };
   return (
     <div className="home">
+      <h1 id="home-title">IHOOVER</h1>
       <img src={vacuumHome} alt="vacuum-home" width={150} height={150} />
-      <h1 id="home-title">WELCOME TO IHOOVER PLAYGROUND</h1>
+      <h2 className="section-title">BIENVENUE SUR LE PLAYGROUND</h2>
+      <p>
+        Grâce à ce simulateur, vous pourrez contrôler à votre guise notre IHoover dans une
+        pièce aux dimensions de votre choix
+      </p>
       <form>
+        <p>Veuillez choisir les dimensions de votre pièce</p>
         <div className="form-section">
-          <p>Please select the size of the room you want to clean</p>
-          <label htmlFor="horizontal">Horizontal</label>
-          <input
-            type="number"
-            value={grid.rows}
-            onChange={handleChangeRowsNumber}></input>
-          <label htmlFor="vertical">Vertical</label>
-          <input
-            type="number"
-            value={grid.columns}
-            onChange={handleChangeColumnsNumber}></input>
+          <div className="form-option">
+            <label htmlFor="horizontal">Axe X (horizontal)</label>
+            <input
+              className="form-input"
+              type="number"
+              value={grid.columns}
+              onChange={handleChangeColumnsNumber}></input>
+          </div>
+          <div className="form-option">
+            <label htmlFor="vertical">Axe Y (vertical)</label>
+            <input
+              className="form-input"
+              type="number"
+              value={grid.rows}
+              onChange={handleChangeRowsNumber}></input>
+          </div>
         </div>
+        <p>Veuillez choisir la position initiale de votre IHoover</p>
         <div className="form-section">
-          <p>Please select the initial position of your wonderful hoover</p>
-          <label htmlFor="horizontal">Horizontal</label>
-          <input
-            type="number"
-            value={hoover.locationX}
-            onChange={handleChangeHooverLocationX}></input>
-          <label htmlFor="vertical">Vertical</label>
-          <input
-            type="number"
-            value={hoover.locationY}
-            onChange={handleChangeHooverLocationY}></input>
-          <label htmlFor="direction">Direction</label>
-          <select
-            name="directions"
-            id="direction-select"
-            onChange={handleChangeHooverDirection}>
-            <option value="N">N</option>
-            <option value="E">E</option>
-            <option value="W">W</option>
-            <option value="S">S</option>
-          </select>
+          <div className="form-option">
+            <label htmlFor="horizontal">Position horizontale</label>
+            <input
+              className="form-input"
+              type="number"
+              value={hoover.locationX}
+              onChange={handleChangeHooverLocationX}></input>
+          </div>
+          <div className="form-option">
+            <label htmlFor="vertical">Position verticale</label>
+            <input
+              className="form-input"
+              type="number"
+              value={hoover.locationY}
+              onChange={handleChangeHooverLocationY}></input>
+          </div>
+          <div className="form-option">
+            <label htmlFor="direction">Direction</label>
+            <select
+              className="form-select"
+              name="directions"
+              id="direction-select"
+              onChange={handleChangeHooverDirection}>
+              <option value="N">N</option>
+              <option value="E">E</option>
+              <option value="W">W</option>
+              <option value="S">S</option>
+            </select>
+          </div>
         </div>
         <NavLink to="/playground">
           <div>

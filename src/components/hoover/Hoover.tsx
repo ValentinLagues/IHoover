@@ -3,36 +3,56 @@ import './Hoover.css';
 import React from 'react';
 
 import vacuum from '../../assets/vacuum.png';
+import IGrid from '../../interfaces/IGrid';
 import IHoover from '../../interfaces/IHoover';
 
-const Hoover = (hoover: IHoover) => {
-  const getRotation = (position: string): void => {
+interface HooverProps {
+  hoover: IHoover;
+  grid: IGrid;
+}
+const Hoover = ({ hoover, grid }: HooverProps) => {
+  // fonction pour faire tourner l'image de 90° selon la direction pour rendre l'experience plus visuelle
+  const getRotation = (position: string): number => {
     switch (position) {
       case 'N':
-        0;
-        break;
+        return 0;
       case 'E':
-        90;
-        break;
+        return 90;
       case 'S':
-        180;
-        break;
+        return 180;
       case 'W':
-        270;
-        break;
+        return 270;
     }
+    return 0;
   };
-  console.log(getRotation);
-  console.log(hoover.direction);
+
   return (
     <div
-      className="hoover"
+      // className="hoover"
       style={{
-        gridRow: `${hoover.locationX} / span 1`,
-        gridColumn: `${hoover.locationY} / span 1`,
+        gridRow: `${grid.rows - hoover.locationY} / span 1`,
+        gridColumn: `${hoover.locationX + 1} / span 1`,
         transform: `rotate(${getRotation(hoover.direction)}deg)`,
       }}>
-      <img src={vacuum} alt="vacuum" height={100} width={100} style={{}} />
+      <img
+        className="hoover"
+        src={vacuum}
+        alt="vacuum"
+        height={
+          grid.columns > 15 && grid.rows > 15
+            ? '30px'
+            : grid.columns > 10 && grid.rows > 10
+            ? '50px'
+            : '60px'
+        }
+        width={
+          grid.columns > 15 && grid.rows > 15
+            ? '30px'
+            : grid.columns > 10 && grid.rows > 10
+            ? '50px'
+            : '60px'
+        }
+      />
     </div>
   );
 };

@@ -1,13 +1,76 @@
-.grid {
-    display: grid;
+.playground {
     width: 100%;
+    color: white;
+}
+
+.playground-config {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid {
+    width: 60vw;
+    display: grid;
     height: 80vh;
     background-color: black;
+    z-index: 0;
     grid-gap:1px;
     border:1px solid black;
-    /* border-bottom:0; */
+    border-bottom:0;
 }
 
 .grid-item{
+    width: 100%;
     background-color:white;
 }
+
+.playground-pad {
+    width: 25vw;
+    padding: 0 3.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.instructions {
+    font-size: smaller;
+}
+
+.location {
+    font-weight: bold;
+    line-height: 5px;
+    margin: 0 0 1rem 0;
+}
+
+.commands-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem 0;
+}
+
+.commands-input {
+    background-color: transparent;
+    border:  solid 1px white;
+    border-radius: 5px;
+    color: white;
+    margin: 0 1rem;
+    padding: 3px;
+    margin: 0 0 4px 0;
+  }
+
+.commands-button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 1px 6px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    margin: 0 6rem;
+  }
+
+.commands-button:hover {
+    border-color: #646cff;
+    color:#646cff; 
+  }
