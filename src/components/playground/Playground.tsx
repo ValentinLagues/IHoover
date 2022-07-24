@@ -16,9 +16,9 @@ const Playground = () => {
   // autorise seulement les caractères sélectionnés pour les instructions
   const checkDGA = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (
-      e.key !== 'd' && // todo rajouter les majuscules
-      e.key !== 'g' &&
-      e.key !== 'a' &&
+      e.key !== ('d' || 'D') &&
+      e.key !== ('g' || 'G') &&
+      e.key !== ('a' || 'A') &&
       e.key !== 'Enter' &&
       e.key !== 'Backspace'
     ) {
