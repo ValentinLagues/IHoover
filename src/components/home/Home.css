@@ -3,23 +3,18 @@
     text-shadow:
       0 0 7px #fff,
       0 0 10px #fff,
-      0 0 42px rgb(233, 12, 12),
-      0 0 77px rgb(233, 12, 12),
-      0 0 100px rgb(233, 12, 12);
+      0 0 42px rgb(18, 188, 230),
+      0 0 77px rgb(18, 188, 230),
+      0 0 100px rgb(18, 188, 230);
   }
   50% {
     text-shadow:
       0 0 7px #fff,
       0 0 10px #fff,
-      0 0 32px rgb(233, 12, 12),
-      0 0 87px rgb(233, 12, 12),
-      0 0 120px rgb(233, 12, 12);
+      0 0 32px rgb(18, 188, 230),
+      0 0 87px rgb(18, 188, 230),
+      0 0 120px rgb(18, 188, 230);
   }
-    }
-
- @font-face {
-    font-family: 'terminator';
-    src: local('terminator'), url('../src/assets/terminator.otf');
     }
 
 .home {
@@ -27,21 +22,6 @@
     width: 100%;
     min-height: 100%;
     justify-content: center;
-}
-
-#home-title {
-  text-shadow:
-  0 0 7px #fff,
-  0 0 10px #fff,
-  0 0 42px rgb(233, 12, 12),
-  0 0 77px rgb(233, 12, 12),
-  0 0 100px rgb(233, 12, 12);
-  animation: neon 2s infinite linear;
-  font-family: terminator;
-}
-
-.section-title {
-  font-family: terminator;
 }
 
 .form-section {
@@ -60,6 +40,7 @@
 
 label {
   font-weight: bold;
+  margin-bottom: 6px;
 }
 
 .form-input {
@@ -80,4 +61,8 @@ label {
     margin-left: 1rem;
     margin-right: 1rem;
     width: 3rem;
+  }
+
+  .validation-button {
+    margin-top: 2rem;
   }

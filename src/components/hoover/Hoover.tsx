@@ -2,7 +2,7 @@ import './Hoover.css';
 
 import React from 'react';
 
-import vacuum from '../../assets/vacuum.png';
+import vacuum from '../../assets/images/vacuum.png';
 import IGrid from '../../interfaces/IGrid';
 import IHoover from '../../interfaces/IHoover';
 

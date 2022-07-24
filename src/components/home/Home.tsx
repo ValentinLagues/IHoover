@@ -3,7 +3,7 @@ import './Home.css';
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import vacuumHome from '../../assets/vacuumHome.png';
+import vacuumHome from '../../assets/images/vacuumHome.png';
 import CurrentPlaygroundContext from '../../contexts/CurrentPlayground';
 
 const Home = () => {
@@ -43,7 +43,7 @@ const Home = () => {
   };
   return (
     <div className="home">
-      <h1 id="home-title">IHOOVER</h1>
+      <h1>IHOOVER</h1>
       <img src={vacuumHome} alt="vacuum-home" width={150} height={150} />
       <h2 className="section-title">BIENVENUE SUR LE PLAYGROUND</h2>
       <p>
@@ -103,8 +103,8 @@ const Home = () => {
           </div>
         </div>
         <NavLink to="/playground">
-          <div>
-            <input type="submit" value="Let's go !" />
+          <div className="validation-button">
+            <input className="commands-button" type="submit" value="C'est parti !" />
           </div>
         </NavLink>
       </form>
