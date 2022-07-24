@@ -28,14 +28,13 @@ const Hoover = ({ hoover, grid }: HooverProps) => {
 
   return (
     <div
-      // className="hoover"
+      className="hoover"
       style={{
         gridRow: `${grid.rows - hoover.locationY} / span 1`,
         gridColumn: `${hoover.locationX + 1} / span 1`,
         transform: `rotate(${getRotation(hoover.direction)}deg)`,
       }}>
       <img
-        className="hoover"
         src={vacuum}
         alt="vacuum"
         height={

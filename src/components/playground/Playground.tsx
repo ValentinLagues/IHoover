@@ -120,7 +120,7 @@ const Playground = () => {
           </div>
           <NavLink to="/">
             <div>
-              <button className="commands-button" type="submit" style={{ width: '22vw' }}>
+              <button className="reset-playground-button" type="submit">
                 REINITIALISER LE PLAYGROUND
               </button>
             </div>
