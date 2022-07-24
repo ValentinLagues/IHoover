@@ -60,16 +60,20 @@ const Playground = () => {
         </div>
         <div className="playground-pad">
           <div className="instructions">
-            <p>
-              Utilisez la ligne de commandes pour entrer vos instructions et appuyez sur
-              ENVOYER pour les valider <br /> Vous pouvez également nettoyer la ligne de
-              commandes en appuyant sur le bouton RESET INSTRUCTIONS
-            </p>
-            <p>Le hoover peut également être contrôlé au clic en temps réel !</p>
-            <p>
-              Pour revenir à la page précédente et reconfigurer le playground, cliquez sur
-              le bouton RESET PLAYGROUND
-            </p>
+            Utilisez la ligne de commandes pour entrer vos instructions et appuyez sur
+            VALIDER pour les exécuter. <br />
+            Liste des commandes : <br />
+            - d : rotation de 90° vers la droite <br />
+            - g : rotation de 90° vers la gauche <br />
+            - a : avance dans la direction choisie <br />
+            <br />
+            Vous pouvez également nettoyer la ligne de commandes en appuyant sur le bouton
+            RESET.
+            <br />
+            Le hoover peut également être contrôlé au clic en temps réel !
+            <br />
+            Pour revenir à la page précédente et reconfigurer le playground, cliquez sur
+            le bouton REINITIALISER LE PLAYGROUND.
           </div>
           <div className="location">
             <p>EMPLACEMENT DU HOOVER</p>
